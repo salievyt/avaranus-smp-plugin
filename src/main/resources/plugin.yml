@@ -1,0 +1,195 @@
+name: AvaranusSMP
+version: '1.0-SNAPSHOT'
+main: dev.sm1le.avaranusSMP.AvaranusSMP
+api-version: '1.21'
+author: Sm1le
+load: STARTUP
+description: Avaranus SMP Plugin
+
+
+
+commands:
+  guardian:
+    description: Команда для гвордейцев
+    usage: "/guardian <manhunt|salary|storage> <username>"
+    permission: as.guardian.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  adminka:
+    description: user set admin
+    usage: "./getadminperms"
+    aliases:
+      - getroot
+
+  rename:
+    description: Команда для переименования предмета
+    usage: "/rename <new item name>"
+    permission: as.rename.use
+    permission-message: "У вас нет доступа к данной команде"
+  
+  economy:
+    description: Экономия сервера
+    usage: "/economy <read|up|down|reset>"
+    permission: as.economy.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  setup:
+    description: Админ панель
+    usage: "/setup <server|users|rule|log>"
+    permission: as.setup.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  settings:
+    description: Команда для открытия GUI настроек
+    usage: "/settings"
+    permission: as.settings.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  structure:
+    description: Команда для управления над структурой РП
+    usage: "/structure <username> <add|remove|set|reset|up|down> <role>"
+    permission: as.structure.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  bank:
+    description: Команда для банка
+    aliases:
+      - b
+      - banksystem
+    usage: "/bank <username> <balance|take|give|reset>"
+    permission-message: "У вас нет доступа к данной команде"
+    permission: as.bank.use
+
+  stream:
+    description: Команда для Стрима
+    usage: "/stream <action> <url>"
+    aliases:
+      - st
+    permission: as.stream.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  point:
+    description: Команда чтобы сохранить кординаты места
+    usage: "/point <save|remove|edit> <name>"
+    permission: as.point.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  playtime:
+    description: Команда для того чтобы узнать сколько времени провёл игрок на сервере с момента регистрации
+    usage: "/playtime <username>"
+    aliases:
+      - pt
+      - playt
+      - playertime
+      - ptime
+    permission: as.playtime.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  ban:
+    description: Команда для блокировки игрока
+    usage: "/ban <username> <rule>"
+    permission: as.ban.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  unban:
+    description: Команда для разблокировки игрока
+    usage: "/unban <username> <desc>"
+    permission: as.ban.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  warn:
+    description: Команда для предупреждения игрока
+    usage: "/ban <username> <rule>"
+    permission: as.ban.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  mute:
+    description: Команда для мута игрока
+    usage: "/mute <username> <rule>"
+    permission: as.mute.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  unmute:
+    description: Команда для размута игрока
+    usage: "/mute <username> <desc>"
+    permission: as.mute.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  spec:
+    description: Команда для наблюдения за игроком
+    usage: "/spec <username>"
+    permission: as.spec.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  serverstatus:
+    description: Команда для информации о состоянии сервера
+    usage: "/serverstatus"
+    permission: as.serverstatus.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  work:
+    description: Команда для работы персонала
+    usage: "/work <join|leave|info>"
+    permission: as.work.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  key:
+    description: Команда для авторизации персонала
+    usage: "/key <secret key>"
+    permission: as.key.use
+    permission-message: "У вас нет доступа к данной команде"
+
+  report:
+    description: Пожаловаться на игрока
+    usage: "/report <ник> <причина>"
+    permission: as.report.use
+
+  suggest:
+    description: Предложить идею
+    usage: "/suggest <идея>"
+    permission: as.suggest.use
+
+  xray:
+    description: Check player xray
+    permission: as.antixray.check
+
+  permissions:
+    as.antixray.check:
+      default: op
+    as.antixray.alert:
+      default: op
+    as.ban.use:
+      default: op
+    as.warn.use:
+      default: op
+    as.mute.use:
+      default: op
+    as.spec.use:
+      default: op
+    as.economy.use:
+      default: op
+    as.bank.use:
+      default: true
+    as.structure.use:
+      default: op
+    as.rename.use:
+      default: true
+    as.settings.use:
+      default: true
+    as.point.use:
+      default: true
+    as.playtime.use:
+      default: true
+    as.stream.use:
+      default: true
+    as.serverstatus.use:
+      default: op
+    as.work.use:
+      default: op
+    as.key.use:
+      default: op
+    as.report.use:
+      default: true
+    as.suggest.use:
+      default: true
+

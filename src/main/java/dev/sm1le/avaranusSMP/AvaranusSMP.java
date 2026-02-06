@@ -11,6 +11,7 @@ import dev.sm1le.avaranusSMP.modules.server.prohibition.exploit.ExploitModule;
 import dev.sm1le.avaranusSMP.modules.server.prohibition.lagmachines.LagMachinesModule;
 import dev.sm1le.avaranusSMP.modules.server.serverstatus.completer.ServerStatusTabCompleter;
 import dev.sm1le.avaranusSMP.modules.server.setup.completer.SetupTabCompleter;
+import dev.sm1le.avaranusSMP.modules.staff.auth.AuthModule;
 import dev.sm1le.avaranusSMP.modules.staff.playtime.completer.PlayTimeTabCompleter;
 import dev.sm1le.avaranusSMP.modules.staff.punishment.command.*;
 import dev.sm1le.avaranusSMP.modules.player.economy.command.EconomyCMD;
@@ -53,9 +54,9 @@ public final class AvaranusSMP extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         modules.forEach(Module::enable);
+        registerModules();
         initCMD();
         initTabCompleter();
-        registerModules();
         getLogger().info("AvaranusSMP успешно запущен");
     }
 
@@ -70,22 +71,12 @@ public final class AvaranusSMP extends JavaPlugin {
         modules.add(new WebhookModule(this));
         modules.add(new LagMachinesModule(this));
         modules.add(new ExploitModule(this));
-
-        // modules.add(new EconomyModule(this));
-        // modules.add(new StructureModule(this));
+        modules.add(new AuthModule(this));
     }
 
     public static AvaranusSMP getInstance() {
         return instance;
     }
-
-//    private void initModule(){
-//        this.webhookModule = new WebhookModule(this);
-//        webhookModule.enable();
-//
-//        this.antiXrayModule = new AntiXrayModule(this);
-//        antiXrayModule.enable();
-//    }
 
 
 
